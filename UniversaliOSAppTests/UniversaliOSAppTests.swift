@@ -11,50 +11,50 @@ import XCTest
 
 class UniversaliOSAppTests: XCTestCase {
 
-    var viewControllerUnderTest : ListVC!
+    var viewControllerUnderTest : ListVC?
     override func setUp() {
         super.setUp()
-        let viewControllerUnderTest = ListVC()
-        self.viewControllerUnderTest.loadView()
-        self.viewControllerUnderTest.viewDidLoad()
+        self.viewControllerUnderTest = ListVC()
+        self.viewControllerUnderTest!.loadView()
+        self.viewControllerUnderTest!.viewDidLoad()
     }
 
     override func tearDown() {
         super.tearDown()
     }
     func testHasATableView() {
-        XCTAssertNotNil(viewControllerUnderTest.tableView)
-    }
-    
-    func testTableViewHasDelegate() {
-        XCTAssertNotNil(viewControllerUnderTest.tableView.delegate)
-    }
-    
-    func testTableViewConfromsToTableViewDelegateProtocol() {
-        XCTAssertTrue(viewControllerUnderTest.conforms(to: UITableViewDelegate.self))
+        XCTAssertNotNil(viewControllerUnderTest!.tableView)
     }
     
     func testTableViewHasDataSource() {
-        XCTAssertNotNil(viewControllerUnderTest.tableView.dataSource)
+        XCTAssertNotNil(viewControllerUnderTest!.tableView.dataSource)
+    }
+    
+    func testTableViewHasDelegate() {
+        XCTAssertNotNil(viewControllerUnderTest!.tableView.delegate)
+    }
+    
+    func testTableViewConfromsToTableViewDelegateProtocol() {
+        XCTAssertTrue(viewControllerUnderTest!.conforms(to: UITableViewDelegate.self))
     }
 
     func testTableViewConformsToTableViewDataSourceProtocol() {
-        XCTAssertTrue(viewControllerUnderTest.conforms(to: UITableViewDataSource.self))
-        XCTAssertTrue(viewControllerUnderTest.responds(to: #selector(viewControllerUnderTest.tableView(_:numberOfRowsInSection:))))
-        XCTAssertTrue(viewControllerUnderTest.responds(to: #selector(viewControllerUnderTest.tableView(_:cellForRowAt:))))
+        XCTAssertTrue(viewControllerUnderTest!.conforms(to: UITableViewDataSource.self))
+        XCTAssertTrue(viewControllerUnderTest!.responds(to: #selector(viewControllerUnderTest!.tableView(_:numberOfRowsInSection:))))
+        XCTAssertTrue(viewControllerUnderTest!.responds(to: #selector(viewControllerUnderTest!.tableView(_:cellForRowAt:))))
     }
 
     func testTableViewCellHasReuseIdentifier() {
-        let cell = viewControllerUnderTest.tableView(viewControllerUnderTest.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ListCell
-        let actualReuseIdentifer = cell?.reuseIdentifier
+        let cell = ListCell(style: .default, reuseIdentifier: "cellId")
+        let actualReuseIdentifer = cell.reuseIdentifier
         let expectedReuseIdentifier = "cellId"
         XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
     }
-
+    
     func testTableCellHasCorrectLabelText() {
-        let cell = viewControllerUnderTest.tableView(viewControllerUnderTest.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ListCell
-        XCTAssertEqual(cell?.cellTitleLabel.text, "one")
-        XCTAssertEqual(cell?.descriptionLabel.text, "two")
+        let cell = ListCell(style: .default, reuseIdentifier: "cellId")
+        XCTAssertEqual(cell.cellTitleLabel.text, "Beavers" )
+//        XCTAssertEqual(cell?.descriptionLabel.text, "One")
     }
     func testExample() {
         // This is an example of a functional test case.
