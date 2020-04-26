@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2A778B0C2455BBE9004F466C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0B2455BBE9004F466C /* AppDelegate.swift */; };
-		2A778B102455BBE9004F466C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0F2455BBE9004F466C /* ViewController.swift */; };
 		2A778B152455BBEA004F466C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A778B142455BBEA004F466C /* Assets.xcassets */; };
 		2A778B182455BBEA004F466C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A778B162455BBEA004F466C /* LaunchScreen.storyboard */; };
 		2A778B232455BBEA004F466C /* UniversaliOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B222455BBEA004F466C /* UniversaliOSAppTests.swift */; };
 		2A778B2E2455BBEB004F466C /* UniversaliOSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B2D2455BBEB004F466C /* UniversaliOSAppUITests.swift */; };
+		2A778B442455BE50004F466C /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B432455BE50004F466C /* ListVC.swift */; };
+		2A778B462455BF53004F466C /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B452455BF53004F466C /* ListCell.swift */; };
+		2A778B472455BF53004F466C /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B452455BF53004F466C /* ListCell.swift */; };
+		2A778B482455BF53004F466C /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B452455BF53004F466C /* ListCell.swift */; };
+		2A778B492455BF57004F466C /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B432455BE50004F466C /* ListVC.swift */; };
+		2A778B4A2455BF57004F466C /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B432455BE50004F466C /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +40,6 @@
 /* Begin PBXFileReference section */
 		2A778B082455BBE9004F466C /* UniversaliOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversaliOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A778B0B2455BBE9004F466C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A778B0F2455BBE9004F466C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A778B142455BBEA004F466C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A778B172455BBEA004F466C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A778B192455BBEA004F466C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		2A778B292455BBEB004F466C /* UniversaliOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversaliOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A778B2D2455BBEB004F466C /* UniversaliOSAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversaliOSAppUITests.swift; sourceTree = "<group>"; };
 		2A778B2F2455BBEB004F466C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A778B432455BE50004F466C /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		2A778B452455BF53004F466C /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,15 @@
 		2A778B0A2455BBE9004F466C /* UniversaliOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				2A778B422455BE23004F466C /* Models */,
+				2A778B412455BE07004F466C /* Controllers */,
+				2A778B402455BDF5004F466C /* CustomCells */,
+				2A778B3F2455BDE2004F466C /* Services */,
+				2A778B3E2455BDCE004F466C /* ViewModels */,
+				2A778B3D2455BDC1004F466C /* Utils */,
+				2A778B3C2455BDB3004F466C /* Network */,
 				2A778B0B2455BBE9004F466C /* AppDelegate.swift */,
-				2A778B0F2455BBE9004F466C /* ViewController.swift */,
+				2A778B3B2455BD9D004F466C /* JSON */,
 				2A778B142455BBEA004F466C /* Assets.xcassets */,
 				2A778B162455BBEA004F466C /* LaunchScreen.storyboard */,
 				2A778B192455BBEA004F466C /* Info.plist */,
@@ -120,6 +133,64 @@
 				2A778B2F2455BBEB004F466C /* Info.plist */,
 			);
 			path = UniversaliOSAppUITests;
+			sourceTree = "<group>";
+		};
+		2A778B3B2455BD9D004F466C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		2A778B3C2455BDB3004F466C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2A778B3D2455BDC1004F466C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2A778B3E2455BDCE004F466C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A778B3F2455BDE2004F466C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2A778B402455BDF5004F466C /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				2A778B452455BF53004F466C /* ListCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		2A778B412455BE07004F466C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A778B432455BE50004F466C /* ListVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2A778B422455BE23004F466C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A778B102455BBE9004F466C /* ViewController.swift in Sources */,
+				2A778B462455BF53004F466C /* ListCell.swift in Sources */,
+				2A778B442455BE50004F466C /* ListVC.swift in Sources */,
 				2A778B0C2455BBE9004F466C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A778B492455BF57004F466C /* ListVC.swift in Sources */,
 				2A778B232455BBEA004F466C /* UniversaliOSAppTests.swift in Sources */,
+				2A778B472455BF53004F466C /* ListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A778B4A2455BF57004F466C /* ListVC.swift in Sources */,
 				2A778B2E2455BBEB004F466C /* UniversaliOSAppUITests.swift in Sources */,
+				2A778B482455BF53004F466C /* ListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
