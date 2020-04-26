@@ -11,40 +11,40 @@ import XCTest
 
 class UniversaliOSAppTests: XCTestCase {
 
-    var viewControllerUnderTest : ListVC?
+    var listVCTest : ListVC?
     override func setUp() {
         super.setUp()
-        self.viewControllerUnderTest = ListVC()
-        self.viewControllerUnderTest!.loadView()
-        self.viewControllerUnderTest!.viewDidLoad()
+        self.listVCTest = ListVC()
+        self.listVCTest!.loadView()
+        self.listVCTest!.viewDidLoad()
     }
 
     override func tearDown() {
         super.tearDown()
     }
     func testHasATableView() {
-        XCTAssertNotNil(viewControllerUnderTest!.tableView)
+        XCTAssertNotNil(listVCTest!.tableView)
     }
     
-    func testTableViewHasDataSource() {
-        XCTAssertNotNil(viewControllerUnderTest!.tableView.dataSource)
+    func testTVCHasDataSource() {
+        XCTAssertNotNil(listVCTest!.tableView.dataSource)
     }
     
-    func testTableViewHasDelegate() {
-        XCTAssertNotNil(viewControllerUnderTest!.tableView.delegate)
+    func testTVCDelegate() {
+        XCTAssertNotNil(listVCTest!.tableView.delegate)
     }
     
-    func testTableViewConfromsToTableViewDelegateProtocol() {
-        XCTAssertTrue(viewControllerUnderTest!.conforms(to: UITableViewDelegate.self))
+    func testTableViewDelegateProtocol() {
+        XCTAssertTrue(listVCTest!.conforms(to: UITableViewDelegate.self))
     }
 
-    func testTableViewConformsToTableViewDataSourceProtocol() {
-        XCTAssertTrue(viewControllerUnderTest!.conforms(to: UITableViewDataSource.self))
-        XCTAssertTrue(viewControllerUnderTest!.responds(to: #selector(viewControllerUnderTest!.tableView(_:numberOfRowsInSection:))))
-        XCTAssertTrue(viewControllerUnderTest!.responds(to: #selector(viewControllerUnderTest!.tableView(_:cellForRowAt:))))
+    func testTableViewDataSourceProtocol() {
+        XCTAssertTrue(listVCTest!.conforms(to: UITableViewDataSource.self))
+        XCTAssertTrue(listVCTest!.responds(to: #selector(listVCTest!.tableView(_:numberOfRowsInSection:))))
+        XCTAssertTrue(listVCTest!.responds(to: #selector(listVCTest!.tableView(_:cellForRowAt:))))
     }
 
-    func testTableViewCellHasReuseIdentifier() {
+    func testTVCHasReuseIdentifier() {
         let cell = ListCell(style: .default, reuseIdentifier: "cellId")
         let actualReuseIdentifer = cell.reuseIdentifier
         let expectedReuseIdentifier = "cellId"
