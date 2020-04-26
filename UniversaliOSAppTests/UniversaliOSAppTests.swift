@@ -51,6 +51,7 @@ class UniversaliOSAppTests: XCTestCase {
         XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
     }
     
+    //MARK:- Example Of a failed TestCase
     func testTableCellHasCorrectLabelText() {
         let cell = ListCell(style: .default, reuseIdentifier: "cellId")
         XCTAssertEqual(cell.cellTitleLabel.text, "Beavers" )

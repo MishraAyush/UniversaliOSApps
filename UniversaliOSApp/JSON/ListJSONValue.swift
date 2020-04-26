@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//    MARK:- JSON 
 let jsonValue = """
 {
 "title":"About Canada",

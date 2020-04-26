@@ -42,7 +42,7 @@ class ListVC: UIViewController {
     }
     //MARK:- ADD PULL TO REFRESH
     func pullToRefresh(){
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: GlobalConstants.KPullToRefresh)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
@@ -61,7 +61,7 @@ class ListVC: UIViewController {
     func setupNavBar(){
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: screenSize.width, height: 44))
-        let listHeading = titleHeading ?? "List"
+        let listHeading = titleHeading ?? GlobalConstants.KDefaultTitle
         let navItem = UINavigationItem(title: "\(String(describing: listHeading))")
         navBar.setItems([navItem], animated: false)
         self.view.addSubview(navBar)
@@ -74,7 +74,7 @@ class ListVC: UIViewController {
         tableView.estimatedRowHeight = 100.0
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
-        tableView.register(ListCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(ListCell.self, forCellReuseIdentifier: GlobalConstants.KCellIdentifier)
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: safeArea.topAnchor , constant: 44).isActive = true
@@ -94,7 +94,7 @@ extension ListVC : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell : ListCell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? ListCell else {return ListCell()}
+        guard let cell : ListCell = tableView.dequeueReusableCell(withIdentifier: GlobalConstants.KCellIdentifier, for: indexPath) as? ListCell else {return ListCell()}
         let listVM = self.listViewModel.modelAt(indexPath.row)
         cell.configureList(contentModel: listVM)
         cell.selectionStyle = .none

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//    MARK:- NETWORK Requests and Data Transfer
 final class WebService{
 
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T,APIServiceError>) -> Void) {
@@ -30,6 +31,7 @@ final class WebService{
 
 
 }
+//    MARK:- Handling HTTP Status Codes
 extension URLSession {
     func dataTask(with url: URLRequest, result: @escaping (Result<(URLResponse, Data), Error>) -> Void) -> URLSessionDataTask {
         return dataTask(with: url) { (data, response, error) in

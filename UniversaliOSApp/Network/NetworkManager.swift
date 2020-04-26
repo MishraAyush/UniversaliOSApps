@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//    MARK:- HTTP methods
 enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
@@ -15,6 +15,7 @@ enum HttpMethod: String {
     case delete = "DELETE"
 }
 
+//    MARK:- GENERIC Resource Type
 
 struct Resource<T: Decodable> {
     let url: URL
@@ -28,6 +29,7 @@ extension Resource {
     }
 }
 
+//    MARK:- Service Error
 enum APIServiceError: Error {
  case apiError
  case invalidEndpoint
@@ -50,7 +52,7 @@ enum APIServiceError: Error {
     }
 
 }
-
+//    MARK:- JSON to Data 
 class NetworkManager{
     static func jsonData(completion : ((_ json : Data?) -> Void)){
         completion(Data(jsonValue.utf8))

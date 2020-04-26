@@ -6,7 +6,7 @@
 //  Copyright © 2020 Ayush Mishra. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 class ListCell : UITableViewCell{
     var safeArea : UILayoutGuide!
@@ -28,10 +28,11 @@ class ListCell : UITableViewCell{
         if let url = URL(string: imageStr){
             imageIV.loadImages(url: url)
         }
+        imageIV.reloadInputViews()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init coder not implemented")
+        fatalError(GlobalConstants.KFatalError)
     }
     
     func setupView(){
@@ -40,7 +41,7 @@ class ListCell : UITableViewCell{
         setupNameLabel()
         setupDescriptionLabel()
     }
-    
+//    MARK:- Image view constraint setup and add it as a subview
     func setupImageView(){
         addSubview(imageIV)
         imageIV.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +49,7 @@ class ListCell : UITableViewCell{
         imageIV.widthAnchor.constraint(equalToConstant: 40).isActive = true
         imageIV.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
+    //    MARK:- Name Label constraint setup and add it as a subview
     func setupNameLabel(){
         
         addSubview(cellTitleLabel)
@@ -58,12 +60,12 @@ class ListCell : UITableViewCell{
         if cellTitleLabel.text == ""{
             cellTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         }
-        cellTitleLabel.font = UIFont(name:"Verdana-Bold", size: 16)
+        cellTitleLabel.font = UIFont(name:GlobalConstants.KLabelBoldFont, size: 16)
         cellTitleLabel.sizeToFit()
         cellTitleLabel.numberOfLines = 0
         
     }
-    
+    //    MARK:- Description Label constraint setup and add it as a subview
     func setupDescriptionLabel(){
         addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +75,7 @@ class ListCell : UITableViewCell{
         
         descriptionLabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 8).isActive = true
         imageIV.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
-        descriptionLabel.font = UIFont(name: "Verdana", size: 14)
+        descriptionLabel.font = UIFont(name: GlobalConstants.KLabelFont, size: 14)
         descriptionLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
         
