@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A778B0C2455BBE9004F466C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0B2455BBE9004F466C /* AppDelegate.swift */; };
-		2A778B0E2455BBE9004F466C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0D2455BBE9004F466C /* SceneDelegate.swift */; };
 		2A778B102455BBE9004F466C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0F2455BBE9004F466C /* ViewController.swift */; };
 		2A778B132455BBE9004F466C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A778B112455BBE9004F466C /* Main.storyboard */; };
 		2A778B152455BBEA004F466C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A778B142455BBEA004F466C /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		2A778B082455BBE9004F466C /* UniversaliOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversaliOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A778B0B2455BBE9004F466C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A778B0D2455BBE9004F466C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2A778B0F2455BBE9004F466C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A778B122455BBE9004F466C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A778B142455BBEA004F466C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				2A778B0B2455BBE9004F466C /* AppDelegate.swift */,
-				2A778B0D2455BBE9004F466C /* SceneDelegate.swift */,
 				2A778B0F2455BBE9004F466C /* ViewController.swift */,
 				2A778B112455BBE9004F466C /* Main.storyboard */,
 				2A778B142455BBEA004F466C /* Assets.xcassets */,
@@ -261,7 +258,6 @@
 			files = (
 				2A778B102455BBE9004F466C /* ViewController.swift in Sources */,
 				2A778B0C2455BBE9004F466C /* AppDelegate.swift in Sources */,
-				2A778B0E2455BBE9004F466C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6LU2US5HB;
 				INFOPLIST_FILE = UniversaliOSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6LU2US5HB;
 				INFOPLIST_FILE = UniversaliOSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
