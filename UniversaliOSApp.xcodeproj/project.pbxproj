@@ -39,6 +39,9 @@
 		2AA867402455D63E00BEF756 /* ListJSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8673F2455D63E00BEF756 /* ListJSONValue.swift */; };
 		2AA867412455D64C00BEF756 /* ListJSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8673F2455D63E00BEF756 /* ListJSONValue.swift */; };
 		2AA867422455D64D00BEF756 /* ListJSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8673F2455D63E00BEF756 /* ListJSONValue.swift */; };
+		2AA867442455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
+		2AA867452455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
+		2AA867462455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,7 @@
 		2AA8672F2455D5D900BEF756 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		2AA867312455D5ED00BEF756 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2AA8673F2455D63E00BEF756 /* ListJSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJSONValue.swift; sourceTree = "<group>"; };
+		2AA867432455D83700BEF756 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				2AA867312455D5ED00BEF756 /* Constants.swift */,
+				2AA867432455D83700BEF756 /* UIImage+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				2A778B462455BF53004F466C /* ListCell.swift in Sources */,
 				2AA8672A2455D5C100BEF756 /* WebService.swift in Sources */,
 				2A778B442455BE50004F466C /* ListVC.swift in Sources */,
+				2AA867442455D83700BEF756 /* UIImage+Extensions.swift in Sources */,
 				2AA867402455D63E00BEF756 /* ListJSONValue.swift in Sources */,
 				2A778B0C2455BBE9004F466C /* AppDelegate.swift in Sources */,
 				2AA867262455D55E00BEF756 /* ListServices.swift in Sources */,
@@ -379,6 +385,7 @@
 				2AA8673B2455D61300BEF756 /* ListServices.swift in Sources */,
 				2A778B492455BF57004F466C /* ListVC.swift in Sources */,
 				2A778B232455BBEA004F466C /* UniversaliOSAppTests.swift in Sources */,
+				2AA867452455D83700BEF756 /* UIImage+Extensions.swift in Sources */,
 				2AA867412455D64C00BEF756 /* ListJSONValue.swift in Sources */,
 				2AA867372455D60D00BEF756 /* Constants.swift in Sources */,
 				2AA8672D2455D5C700BEF756 /* WebService.swift in Sources */,
@@ -396,6 +403,7 @@
 				2AA8673C2455D61400BEF756 /* ListServices.swift in Sources */,
 				2A778B4A2455BF57004F466C /* ListVC.swift in Sources */,
 				2A778B2E2455BBEB004F466C /* UniversaliOSAppUITests.swift in Sources */,
+				2AA867462455D83700BEF756 /* UIImage+Extensions.swift in Sources */,
 				2AA867422455D64D00BEF756 /* ListJSONValue.swift in Sources */,
 				2AA867382455D60E00BEF756 /* Constants.swift in Sources */,
 				2AA8672E2455D5C700BEF756 /* WebService.swift in Sources */,

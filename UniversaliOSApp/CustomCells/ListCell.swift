@@ -22,6 +22,10 @@ class ListCell : UITableViewCell{
 
         self.cellTitleLabel.text = contentModel.title
         self.descriptionLabel.text = contentModel.description
+        guard let imageStr = contentModel.imageHref else { return }
+        if let url = URL(string: imageStr){
+            imageIV.loadImages(url: url)
+        }
     }
     
     required init?(coder: NSCoder) {
