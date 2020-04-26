@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//Creating Model as per JSON
 struct Title : Decodable {
     var title : String?
     var rows :[SubTitle]?

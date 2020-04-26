@@ -20,7 +20,7 @@ class ListVC: UIViewController {
         safeArea = view.layoutMarginsGuide
         setupView()
     }
-    
+    //MARK:- Making an API call
     func apiCall(){
         ListServices().loadUserList { [unowned self] result in
             switch result {
@@ -44,6 +44,7 @@ class ListVC: UIViewController {
         setupTableView()
         setupNavBar()
     }
+    //MARK:- NAVIGATION BAR SETUP
     func setupNavBar(){
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: screenSize.width, height: 44))
@@ -53,7 +54,7 @@ class ListVC: UIViewController {
         navBar.setItems([navItem], animated: false)
         self.view.addSubview(navBar)
     }
-    
+    //MARK:- TABLE VIEW SETUP
     func setupTableView(){
         //Adding UIView first before adding constraints
         view.addSubview(tableView)
