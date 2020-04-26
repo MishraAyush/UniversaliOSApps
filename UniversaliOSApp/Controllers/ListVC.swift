@@ -6,21 +6,38 @@
 //  Copyright © 2020 Ayush Mishra. All rights reserved.
 //
 
-import Foundation
 import UIKit
 class ListVC: UIViewController {
     
     let tableView =  UITableView()
     var safeArea : UILayoutGuide!
-    var arrList = ["Ayush" , "Ankit" , "Virat"]
+    var titleHeading: String? = ""
+    private var listViewModel = ListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        apiCall()
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
         setupView()
     }
     
-    
+    func apiCall(){
+        ListServices().loadUserList { [unowned self] result in
+            switch result {
+            case .success(let userlist):
+                DispatchQueue.main.async {
+                    self.listViewModel.arrListData = userlist.rows!
+                    self.listViewModel.heading = userlist
+                    self.titleHeading = userlist.title
+                    self.setupNavBar()
+                    self.tableView.reloadData()
+                }
+                print("success")
+            case .failure( _):
+                print("fail")
+            }
+        }
+    }
     
     //MARK:- Setup View
     func setupView(){
@@ -30,7 +47,9 @@ class ListVC: UIViewController {
     func setupNavBar(){
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: screenSize.width, height: 44))
-        let navItem = UINavigationItem(title: "Title")
+        let listHeading = titleHeading ?? "List"
+//        let listHeading = UserDefaults.standard.string(forKey: "navHeading")
+        let navItem = UINavigationItem(title: "\(String(describing: listHeading))")
         navBar.setItems([navItem], animated: false)
         self.view.addSubview(navBar)
     }
@@ -38,6 +57,9 @@ class ListVC: UIViewController {
     func setupTableView(){
         //Adding UIView first before adding constraints
         view.addSubview(tableView)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100.0
+        tableView.allowsSelection = false
         tableView.register(ListCell.self, forCellReuseIdentifier: "cellId")
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,14 +76,21 @@ class ListVC: UIViewController {
 //MARK:- UITableViewDataSource
 extension ListVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        listViewModel.numberOfRows(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell : ListCell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? ListCell else {return ListCell()}
+        let listVM = self.listViewModel.modelAt(indexPath.row)
+        cell.configureList(contentModel: listVM)
+        cell.selectionStyle = .none
         return cell
     }
 
     
 }
-
+extension ListVC : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}

@@ -18,6 +18,11 @@ class ListCell : UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
     }
+    func configureList(contentModel : SubTitle){
+
+        self.cellTitleLabel.text = contentModel.title
+        self.descriptionLabel.text = contentModel.description
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init coder not implemented")
@@ -34,19 +39,29 @@ class ListCell : UITableViewCell{
         addSubview(imageIV)
         
         imageIV.translatesAutoresizingMaskIntoConstraints = false
+//        imageIV.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 8).isActive = true
         imageIV.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+//        imageIV.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive =  true
+//        imageIV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         imageIV.widthAnchor.constraint(equalToConstant: 40).isActive = true
         imageIV.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        imageIV.backgroundColor = .red
     }
     func setupNameLabel(){
+        
+        // configure titleLabel
+//        contentView.addSubview(nameLabel)
         addSubview(cellTitleLabel)
         cellTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         cellTitleLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 8).isActive = true
         cellTitleLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 4).isActive = true
+//        cellTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         cellTitleLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor , constant: 8).isActive = true
+//        cellTitleLabel.numberOfLines = 0
         if cellTitleLabel.text == ""{
             cellTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         }
+//        imageIV.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
         cellTitleLabel.font = UIFont(name:"Verdana-Bold", size: 16)
         cellTitleLabel.sizeToFit()
         cellTitleLabel.numberOfLines = 0
@@ -61,6 +76,12 @@ class ListCell : UITableViewCell{
         descriptionLabel.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor).isActive = true
         
         descriptionLabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 8).isActive = true
+//        if descriptionLabel.text == nil{
+//            imageIV.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 8).isActive = true
+//
+////            descriptionLabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 8).isActive = true
+//        }
+//        descriptionLabel.lineBreakMode = .byWordWrapping
         imageIV.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
         descriptionLabel.font = UIFont(name: "Verdana", size: 14)
         descriptionLabel.sizeToFit()
