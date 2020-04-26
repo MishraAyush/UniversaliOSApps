@@ -28,6 +28,12 @@ class ListCell : UITableViewCell{
         if let url = URL(string: imageStr){
             imageIV.loadImages(url: url)
         }
+        if (contentModel.title == nil) && (contentModel.description == nil){
+            imageIV.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            cellTitleLabel.heightAnchor.constraint(equalToConstant: 00).isActive = true
+        }
+        reloadInputViews()
     }
     
     required init?(coder: NSCoder) {
@@ -47,6 +53,7 @@ class ListCell : UITableViewCell{
         imageIV.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
         imageIV.widthAnchor.constraint(equalToConstant: 40).isActive = true
         imageIV.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        imageIV.backgroundColor = .lightGray
     }
     func setupNameLabel(){
         

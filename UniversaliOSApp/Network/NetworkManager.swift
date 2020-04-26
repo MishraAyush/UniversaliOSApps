@@ -52,8 +52,6 @@ enum APIServiceError: Error {
 }
 
 class NetworkManager{
-//    let fileUrl: URL = Bundle.main.url(forResource: "ListJSON", withExtension: "json")!
-//    let jsonParseData: Data = Data(contentsOf: fileUrl)
     static func jsonData(completion : ((_ json : Data?) -> Void)){
         completion(Data(jsonValue.utf8))
     }

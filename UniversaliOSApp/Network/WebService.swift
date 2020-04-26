@@ -20,11 +20,6 @@ final class WebService{
                 print("data is nil")
                 return
             }
-
-//            guard let amiiboList = try? JSONDecoder().decode(T.self, from: data) else{
-//                print("could'nt decode json")
-//                return
-//            }
             guard let amiiboList = try? JSONDecoder().decode(T.self, from: jsonValue.data(using: .utf8)!) else{
                 print("could'nt decode json")
                 return
