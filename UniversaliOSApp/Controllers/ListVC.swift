@@ -12,6 +12,7 @@ class ListVC: UIViewController {
     let tableView =  UITableView()
     var safeArea : UILayoutGuide!
     var titleHeading: String? = ""
+    private let refreshControl = UIRefreshControl()
     private var listViewModel = ListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class ListVC: UIViewController {
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
         setupView()
+        pullToRefresh()
     }
     //MARK:- Making an API call
     func apiCall(){
@@ -38,6 +40,17 @@ class ListVC: UIViewController {
             }
         }
     }
+    //MARK:- ADD PULL TO REFRESH
+    func pullToRefresh(){
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    @objc func refresh(_ sender: AnyObject) {
+        tableView.reloadData()
+        apiCall()
+        refreshControl.endRefreshing()
+    }
     
     //MARK:- Setup View
     func setupView(){
@@ -49,7 +62,6 @@ class ListVC: UIViewController {
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: screenSize.width, height: 44))
         let listHeading = titleHeading ?? "List"
-//        let listHeading = UserDefaults.standard.string(forKey: "navHeading")
         let navItem = UINavigationItem(title: "\(String(describing: listHeading))")
         navBar.setItems([navItem], animated: false)
         self.view.addSubview(navBar)
@@ -92,6 +104,6 @@ extension ListVC : UITableViewDataSource{
 }
 extension ListVC : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+         UITableView.automaticDimension
     }
 }
