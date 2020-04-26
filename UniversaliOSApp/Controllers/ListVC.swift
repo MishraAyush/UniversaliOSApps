@@ -60,6 +60,7 @@ class ListVC: UIViewController {
     //MARK:- NAVIGATION BAR SETUP
     func setupNavBar(){
         let screenSize: CGRect = UIScreen.main.bounds
+        navigationItem.largeTitleDisplayMode = .always
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: screenSize.width, height: 44))
         let listHeading = titleHeading ?? GlobalConstants.KDefaultTitle
         let navItem = UINavigationItem(title: "\(String(describing: listHeading))")
