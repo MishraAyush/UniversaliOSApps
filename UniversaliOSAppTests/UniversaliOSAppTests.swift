@@ -11,14 +11,51 @@ import XCTest
 
 class UniversaliOSAppTests: XCTestCase {
 
+    var viewControllerUnderTest : ListVC!
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        let viewControllerUnderTest = ListVC()
+        self.viewControllerUnderTest.loadView()
+        self.viewControllerUnderTest.viewDidLoad()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    func testHasATableView() {
+        XCTAssertNotNil(viewControllerUnderTest.tableView)
+    }
+    
+    func testTableViewHasDelegate() {
+        XCTAssertNotNil(viewControllerUnderTest.tableView.delegate)
+    }
+    
+    func testTableViewConfromsToTableViewDelegateProtocol() {
+        XCTAssertTrue(viewControllerUnderTest.conforms(to: UITableViewDelegate.self))
+    }
+    
+    func testTableViewHasDataSource() {
+        XCTAssertNotNil(viewControllerUnderTest.tableView.dataSource)
     }
 
+    func testTableViewConformsToTableViewDataSourceProtocol() {
+        XCTAssertTrue(viewControllerUnderTest.conforms(to: UITableViewDataSource.self))
+        XCTAssertTrue(viewControllerUnderTest.responds(to: #selector(viewControllerUnderTest.tableView(_:numberOfRowsInSection:))))
+        XCTAssertTrue(viewControllerUnderTest.responds(to: #selector(viewControllerUnderTest.tableView(_:cellForRowAt:))))
+    }
+
+    func testTableViewCellHasReuseIdentifier() {
+        let cell = viewControllerUnderTest.tableView(viewControllerUnderTest.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ListCell
+        let actualReuseIdentifer = cell?.reuseIdentifier
+        let expectedReuseIdentifier = "cellId"
+        XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
+    }
+
+    func testTableCellHasCorrectLabelText() {
+        let cell = viewControllerUnderTest.tableView(viewControllerUnderTest.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ListCell
+        XCTAssertEqual(cell?.cellTitleLabel.text, "one")
+        XCTAssertEqual(cell?.descriptionLabel.text, "two")
+    }
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
