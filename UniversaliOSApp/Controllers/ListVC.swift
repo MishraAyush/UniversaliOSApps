@@ -100,24 +100,9 @@ extension ListVC : UITableViewDataSource{
         cell.selectionStyle = .none
         return cell
     }
-   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            listViewModel.arrListData.remove(at: 0)
-            let indexPath = IndexPath(item: 0, section: 0)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-
-    
 }
 extension ListVC : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          UITableView.automaticDimension
     }
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        if editingStyle == .delete {
-//
-//        }
-//    }
-    
 }
