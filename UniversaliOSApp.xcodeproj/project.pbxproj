@@ -42,6 +42,8 @@
 		2AA867442455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
 		2AA867452455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
 		2AA867462455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
+		2AA867632456B62B00BEF756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0B2455BBE9004F466C /* AppDelegate.swift */; };
+		2AA867642456B62C00BEF756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0B2455BBE9004F466C /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -381,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA867632456B62B00BEF756 /* AppDelegate.swift in Sources */,
 				2AA8672B2455D5C300BEF756 /* NetworkManager.swift in Sources */,
 				2AA8673B2455D61300BEF756 /* ListServices.swift in Sources */,
 				2A778B492455BF57004F466C /* ListVC.swift in Sources */,
@@ -399,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA867642456B62C00BEF756 /* AppDelegate.swift in Sources */,
 				2AA8672C2455D5C400BEF756 /* NetworkManager.swift in Sources */,
 				2AA8673C2455D61400BEF756 /* ListServices.swift in Sources */,
 				2A778B4A2455BF57004F466C /* ListVC.swift in Sources */,

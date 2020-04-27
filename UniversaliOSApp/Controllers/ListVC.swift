@@ -59,18 +59,11 @@ class ListVC: UIViewController {
     }
     //MARK:- NAVIGATION BAR SETUP
     func setupNavBar(){
-        let screenSize: CGRect = UIScreen.main.bounds
-        navigationItem.largeTitleDisplayMode = .always
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44.0))
-        self.view.addSubview(navBar);
-//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: screenSize.width, height: 44))
         let listHeading = titleHeading ?? GlobalConstants.KDefaultTitle
-        let navItem = UINavigationItem(title: "\(String(describing: listHeading))")
-        navBar.setItems([navItem], animated: false)
-        self.view.addSubview(navBar)
+        navigationController?.navigationBar.topItem?.title = listHeading
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-       tableView.reloadData()
+        tableView.reloadData()
         apiCall()
     }
     //MARK:- TABLE VIEW SETUP
@@ -84,7 +77,7 @@ class ListVC: UIViewController {
         tableView.register(ListCell.self, forCellReuseIdentifier: GlobalConstants.KCellIdentifier)
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: safeArea.topAnchor , constant: 44).isActive = true
+        tableView.topAnchor.constraint(equalTo: safeArea.topAnchor , constant: 8).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
