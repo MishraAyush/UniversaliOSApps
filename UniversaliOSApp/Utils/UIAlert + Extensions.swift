@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController{
 func showAlert(title:String,message:String){
        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-       let actionOk = UIAlertAction(title: "Close Application",
+    let actionOk = UIAlertAction(title: GlobalConstants.KCloseApplication,
                                     style: .default,
                                     handler: { (action: UIAlertAction!) in
                                         
@@ -26,7 +26,7 @@ func showAlert(title:String,message:String){
    }
     func showAlertAPIFailure(title:String,message:String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionOk = UIAlertAction(title: "Failed To fetch",
+        let actionOk = UIAlertAction(title: GlobalConstants.KFailedToFetch,
                                      style: .default,
                                      handler: nil)
         

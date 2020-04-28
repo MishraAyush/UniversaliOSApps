@@ -36,10 +36,10 @@ class ListVC: UIViewController {
                     self.tableView.reloadData()
                 }
             case .failure( _):
-                self.showAlertAPIFailure(title: "UniversalApp", message: "Unable to fetch")
+                self.showAlertAPIFailure(title: GlobalConstants.appName, message: GlobalConstants.KUnableToFetch)
             }
             }}else{
-            showAlert(title: "UniversalApp", message: "NoInternet")
+            showAlert(title: GlobalConstants.appName, message: GlobalConstants.KNoInternet)
         }
     }
     //MARK:- ADD PULL TO REFRESH

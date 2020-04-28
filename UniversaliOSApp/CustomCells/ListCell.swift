@@ -25,11 +25,12 @@ class ListCell : UITableViewCell{
 
         self.cellTitleLabel.text = contentModel.title
         self.descriptionLabel.text = contentModel.description
+        self.imageIV.backgroundColor = UIColor(patternImage: UIImage(named: "cameraup")!)
         guard let imageStr = contentModel.imageHref else { return }
         if let url = URL(string: imageStr){
+            self.imageIV.backgroundColor = UIColor(patternImage: UIImage(named: "cameraup")!)
             imageIV.sd_setImage(with:  url , placeholderImage: UIImage(named: "cameraup"),options: SDWebImageOptions.allowInvalidSSLCertificates, completed: nil)
         }
-//        imageIV.reloadInputViews()
     }
     
     required init?(coder: NSCoder) {

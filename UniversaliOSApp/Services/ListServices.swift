@@ -13,7 +13,7 @@ struct ListServices {
     func loadUserList(completion: @escaping(Result<Title,APIServiceError>) ->()){
         let url = URL(string: WebServiceURLS.kBaseUrl)
         let resource = Resource<Title>(url: url!)
-        KRProgressHUD.showMessage("Fetching Data...")
+        KRProgressHUD.showMessage(GlobalConstants.KFetchingData)
         WebService().load(resource: resource) { result in
             switch result {
             case .success(let user) :
