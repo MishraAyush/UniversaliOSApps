@@ -291,6 +291,7 @@
 				2A778B042455BBE9004F466C /* Sources */,
 				2A778B052455BBE9004F466C /* Frameworks */,
 				2A778B062455BBE9004F466C /* Resources */,
+				7E2ED72DCB469B581FCC93D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +330,7 @@
 				2A778B252455BBEB004F466C /* Sources */,
 				2A778B262455BBEB004F466C /* Frameworks */,
 				2A778B272455BBEB004F466C /* Resources */,
+				8349FD4042C03102DAC7ABB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,6 +474,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E2ED72DCB469B581FCC93D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UniversaliOSApp/Pods-UniversaliOSApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UniversaliOSApp/Pods-UniversaliOSApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UniversaliOSApp/Pods-UniversaliOSApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8349FD4042C03102DAC7ABB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UniversaliOSApp-UniversaliOSAppUITests/Pods-UniversaliOSApp-UniversaliOSAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UniversaliOSApp-UniversaliOSAppUITests/Pods-UniversaliOSApp-UniversaliOSAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UniversaliOSApp-UniversaliOSAppUITests/Pods-UniversaliOSApp-UniversaliOSAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A50B95F64BA357A80CE7B91E /* [CP] Check Pods Manifest.lock */ = {

@@ -18,6 +18,38 @@
             endingLineNumber = "105"
             landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E5286EDF-4383-43E5-8483-EADEA235587D - 3bf654cf28d00f7b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniversaliOSApp.ListVC.tableView(_: __C.UITableView, heightForRowAt: Foundation.IndexPath) -&gt; CoreGraphics.CGFloat"
+                  moduleName = "UniversaliOSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayush/Documents/GitHub/UniversaliOSApps/UniversaliOSApp/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "E5286EDF-4383-43E5-8483-EADEA235587D - 3cf70eec07611817"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniversaliOSAppTests.ListVC.tableView(_: __C.UITableView, heightForRowAt: Foundation.IndexPath) -&gt; CoreGraphics.CGFloat"
+                  moduleName = "UniversaliOSAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayush/Documents/GitHub/UniversaliOSApps/UniversaliOSApp/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

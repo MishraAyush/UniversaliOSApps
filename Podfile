@@ -6,6 +6,8 @@ target 'UniversaliOSApp' do
   use_frameworks!
 
   # Pods for UniversaliOSApp
+ pod 'Alamofire'
+pod 'SDWebImage'
 
   target 'UniversaliOSAppTests' do
     inherit! :search_paths

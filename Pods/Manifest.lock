@@ -1,16 +1,26 @@
 PODS:
+  - Alamofire (5.0.5)
   - Hippolyte (1.2.1)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
 
 DEPENDENCIES:
+  - Alamofire
   - Hippolyte
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Hippolyte
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Hippolyte: eba3f74297b82aa04330067cf99142d0db90a9db
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
 
-PODFILE CHECKSUM: 1a716863ee695e33c54ceddf58a2225d82f679ec
+PODFILE CHECKSUM: c8243d2bdf7d7798194700c2049b2b6d2d67ef39
 
 COCOAPODS: 1.8.4

@@ -31,10 +31,6 @@ class UniversaliOSAppTests: XCTestCase {
         XCTAssertNotNil(listVCTest!.tableView.dataSource)
     }
     
-    func testTVCDelegate() {
-        XCTAssertNotNil(listVCTest!.tableView.delegate)
-    }
-    
     func testTableViewDelegateProtocol() {
         XCTAssertTrue(listVCTest!.conforms(to: UITableViewDelegate.self))
     }
@@ -51,40 +47,27 @@ class UniversaliOSAppTests: XCTestCase {
         let expectedReuseIdentifier = "cellId"
         XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
     }
-//    func testValidateValidTitle() {
-//           // This is an example of a functional test case.
-//           // Use XCTAssert and related functions to verify your tests produce the correct results.
-//           let controllerVM:ListViewModel = ListViewModel()
-////           let sampleEmail = "dnyaneshwar.surywanshi@in.fujitsu.com"
-////           XCTAssertTrue(controllerVM.validateEmail(text: sampleEmail))
-//        XCTAssertEqual(controllerVM.heading.title , "About Canada")
-//
-//       }
     
-    //MARK:- Example Of a failed TestCase
-    func testTableCellHasCorrectLabelText() {
-        let cell = ListCell(style: .default, reuseIdentifier: "cellId")
-        XCTAssertEqual(cell.cellTitleLabel.text, "Beavers" )
-    }
-    
-    func testService() {
+    func testServiceCallInProject() {
         let url = URL(string: WebServiceURLS.kBaseUrl)!
-      var stub = StubRequest(method: .GET, url: url)
-      var response = StubResponse()
-      let body = "Hippolyte".data(using: .utf8)!
-      response.body = body
-      stub.response = response
-      Hippolyte.shared.add(stubbedRequest: stub)
-      Hippolyte.shared.start()
-
-      let expectation = self.expectation(description: "Stubs network call")
-      let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-        XCTAssertEqual(data, body)
-        expectation.fulfill()
-      }
-      task.resume()
-
-      wait(for: [expectation], timeout: 1)
+        var stub = StubRequest(method: .GET, url: url)
+        let path = Bundle(for: type(of: self)).path(forResource: "ListJson", ofType: "json")!
+         _ = NSData(contentsOfFile: path)!
+        var response = StubResponse()
+        let body = "Hippolyte".data(using: .utf8)!
+        response.body = body
+        stub.response = response
+        Hippolyte.shared.add(stubbedRequest: stub)
+        Hippolyte.shared.start()
+        
+        let expectation = self.expectation(description: "Success")
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+            XCTAssertEqual(data, body)
+            expectation.fulfill()
+        }
+        task.resume()
+        
+        wait(for: [expectation], timeout: 1)
     }
     }
 
