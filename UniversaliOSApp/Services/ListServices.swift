@@ -7,19 +7,24 @@
 //
 
 import Foundation
+import KRProgressHUD
 struct ListServices {
     
     func loadUserList(completion: @escaping(Result<Title,APIServiceError>) ->()){
         let url = URL(string: WebServiceURLS.kBaseUrl)
         let resource = Resource<Title>(url: url!)
+        KRProgressHUD.showMessage("Fetching Data...")
         WebService().load(resource: resource) { result in
             switch result {
             case .success(let user) :
+                DispatchQueue.main.async {
                 let abc =  user
-                completion(.success(abc))
+                KRProgressHUD.dismiss()
+                    completion(.success(abc))}
                 //            completion(.success(user))
                 
             case  .failure(let error) :
+                KRProgressHUD.dismiss()
                 completion(.failure(error))
             }
         }

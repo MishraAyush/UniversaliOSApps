@@ -24,6 +24,7 @@ class ListVC: UIViewController {
     }
     //MARK:- Making an API call
     func apiCall(){
+        if Connectivity.isConnectedToInternet(){
         ListServices().loadUserList { [unowned self] result in
             switch result {
             case .success(let userlist):
@@ -34,10 +35,11 @@ class ListVC: UIViewController {
                     self.setupNavBar()
                     self.tableView.reloadData()
                 }
-                print("success")
             case .failure( _):
-                print("fail")
+                self.showAlertAPIFailure(title: "UniversalApp", message: "Unable to fetch")
             }
+            }}else{
+            showAlert(title: "UniversalApp", message: "NoInternet")
         }
     }
     //MARK:- ADD PULL TO REFRESH

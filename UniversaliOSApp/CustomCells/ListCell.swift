@@ -8,9 +8,10 @@
 
 
 import UIKit
+import SDWebImage
 class ListCell : UITableViewCell{
     var safeArea : UILayoutGuide!
-    var imageIV = UIImageView()
+    var imageIV = SDAnimatedImageView()
     let cellTitleLabel = UILabel()
     let descriptionLabel = UILabel()
     
@@ -26,9 +27,9 @@ class ListCell : UITableViewCell{
         self.descriptionLabel.text = contentModel.description
         guard let imageStr = contentModel.imageHref else { return }
         if let url = URL(string: imageStr){
-            imageIV.loadImages(url: url)
+            imageIV.sd_setImage(with:  url , placeholderImage: UIImage(named: "cameraup"),options: SDWebImageOptions.allowInvalidSSLCertificates, completed: nil)
         }
-        imageIV.reloadInputViews()
+//        imageIV.reloadInputViews()
     }
     
     required init?(coder: NSCoder) {

@@ -44,6 +44,12 @@
 		2AA867462455D83700BEF756 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA867432455D83700BEF756 /* UIImage+Extensions.swift */; };
 		2AA867632456B62B00BEF756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0B2455BBE9004F466C /* AppDelegate.swift */; };
 		2AA867642456B62C00BEF756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A778B0B2455BBE9004F466C /* AppDelegate.swift */; };
+		2AE04AC82458CB8A00DD17F0 /* UIAlert + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE04AC72458CB8A00DD17F0 /* UIAlert + Extensions.swift */; };
+		2AE04AC92458CB8A00DD17F0 /* UIAlert + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE04AC72458CB8A00DD17F0 /* UIAlert + Extensions.swift */; };
+		2AE04ACA2458CB8A00DD17F0 /* UIAlert + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE04AC72458CB8A00DD17F0 /* UIAlert + Extensions.swift */; };
+		2AE04ACC2458CBEF00DD17F0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE04ACB2458CBEF00DD17F0 /* Utility.swift */; };
+		2AE04ACD2458CBEF00DD17F0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE04ACB2458CBEF00DD17F0 /* Utility.swift */; };
+		2AE04ACE2458CBEF00DD17F0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE04ACB2458CBEF00DD17F0 /* Utility.swift */; };
 		2AF958172458B57E004CD40C /* ListJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF958162458B57E004CD40C /* ListJson.json */; };
 		2AF958182458B57E004CD40C /* ListJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF958162458B57E004CD40C /* ListJson.json */; };
 		2AF958192458B57E004CD40C /* ListJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF958162458B57E004CD40C /* ListJson.json */; };
@@ -92,6 +98,8 @@
 		2AA867312455D5ED00BEF756 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2AA8673F2455D63E00BEF756 /* ListJSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJSONValue.swift; sourceTree = "<group>"; };
 		2AA867432455D83700BEF756 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		2AE04AC72458CB8A00DD17F0 /* UIAlert + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert + Extensions.swift"; sourceTree = "<group>"; };
+		2AE04ACB2458CBEF00DD17F0 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		2AF958162458B57E004CD40C /* ListJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListJson.json; sourceTree = "<group>"; };
 		478BD0E418027B193059D4E7 /* Pods-UniversaliOSApp-UniversaliOSAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversaliOSApp-UniversaliOSAppUITests.release.xcconfig"; path = "Target Support Files/Pods-UniversaliOSApp-UniversaliOSAppUITests/Pods-UniversaliOSApp-UniversaliOSAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63D28EA3681395CB61284986 /* Pods_UniversaliOSApp_UniversaliOSAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniversaliOSApp_UniversaliOSAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +221,8 @@
 			children = (
 				2AA867312455D5ED00BEF756 /* Constants.swift */,
 				2AA867432455D83700BEF756 /* UIImage+Extensions.swift */,
+				2AE04AC72458CB8A00DD17F0 /* UIAlert + Extensions.swift */,
+				2AE04ACB2458CBEF00DD17F0 /* Utility.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -541,10 +551,12 @@
 			files = (
 				2AA867282455D5A300BEF756 /* NetworkManager.swift in Sources */,
 				2A778B462455BF53004F466C /* ListCell.swift in Sources */,
+				2AE04AC82458CB8A00DD17F0 /* UIAlert + Extensions.swift in Sources */,
 				2AA8672A2455D5C100BEF756 /* WebService.swift in Sources */,
 				2A778B442455BE50004F466C /* ListVC.swift in Sources */,
 				2AA867442455D83700BEF756 /* UIImage+Extensions.swift in Sources */,
 				2AA867402455D63E00BEF756 /* ListJSONValue.swift in Sources */,
+				2AE04ACC2458CBEF00DD17F0 /* Utility.swift in Sources */,
 				2A778B0C2455BBE9004F466C /* AppDelegate.swift in Sources */,
 				2AA867262455D55E00BEF756 /* ListServices.swift in Sources */,
 				2AA867302455D5D900BEF756 /* ListViewModel.swift in Sources */,
@@ -557,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE04ACD2458CBEF00DD17F0 /* Utility.swift in Sources */,
 				2AA867632456B62B00BEF756 /* AppDelegate.swift in Sources */,
 				2AA8672B2455D5C300BEF756 /* NetworkManager.swift in Sources */,
 				2AA8673B2455D61300BEF756 /* ListServices.swift in Sources */,
@@ -564,6 +577,7 @@
 				2A778B232455BBEA004F466C /* UniversaliOSAppTests.swift in Sources */,
 				2AA867452455D83700BEF756 /* UIImage+Extensions.swift in Sources */,
 				2AA867412455D64C00BEF756 /* ListJSONValue.swift in Sources */,
+				2AE04AC92458CB8A00DD17F0 /* UIAlert + Extensions.swift in Sources */,
 				2AA867372455D60D00BEF756 /* Constants.swift in Sources */,
 				2AA8672D2455D5C700BEF756 /* WebService.swift in Sources */,
 				2AA867392455D61000BEF756 /* ListViewModel.swift in Sources */,
@@ -576,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE04ACE2458CBEF00DD17F0 /* Utility.swift in Sources */,
 				2AA867642456B62C00BEF756 /* AppDelegate.swift in Sources */,
 				2AA8672C2455D5C400BEF756 /* NetworkManager.swift in Sources */,
 				2AA8673C2455D61400BEF756 /* ListServices.swift in Sources */,
@@ -583,6 +598,7 @@
 				2A778B2E2455BBEB004F466C /* UniversaliOSAppUITests.swift in Sources */,
 				2AA867462455D83700BEF756 /* UIImage+Extensions.swift in Sources */,
 				2AA867422455D64D00BEF756 /* ListJSONValue.swift in Sources */,
+				2AE04ACA2458CB8A00DD17F0 /* UIAlert + Extensions.swift in Sources */,
 				2AA867382455D60E00BEF756 /* Constants.swift in Sources */,
 				2AA8672E2455D5C700BEF756 /* WebService.swift in Sources */,
 				2AA8673A2455D61100BEF756 /* ListViewModel.swift in Sources */,
