@@ -7,7 +7,30 @@
 		<key>UniversaliOSApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+		<key>UniversaliOSAppTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2A778B072455BBE9004F466C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A778B1D2455BBEA004F466C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A778B282455BBEB004F466C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -1,0 +1,16 @@
+PODS:
+  - Hippolyte (1.2.1)
+
+DEPENDENCIES:
+  - Hippolyte
+
+SPEC REPOS:
+  trunk:
+    - Hippolyte
+
+SPEC CHECKSUMS:
+  Hippolyte: eba3f74297b82aa04330067cf99142d0db90a9db
+
+PODFILE CHECKSUM: 1a716863ee695e33c54ceddf58a2225d82f679ec
+
+COCOAPODS: 1.8.4

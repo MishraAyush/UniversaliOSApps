@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Hippolyte
 @testable import UniversaliOSApp
 
 class UniversaliOSAppTests: XCTestCase {
@@ -50,23 +51,41 @@ class UniversaliOSAppTests: XCTestCase {
         let expectedReuseIdentifier = "cellId"
         XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
     }
+//    func testValidateValidTitle() {
+//           // This is an example of a functional test case.
+//           // Use XCTAssert and related functions to verify your tests produce the correct results.
+//           let controllerVM:ListViewModel = ListViewModel()
+////           let sampleEmail = "dnyaneshwar.surywanshi@in.fujitsu.com"
+////           XCTAssertTrue(controllerVM.validateEmail(text: sampleEmail))
+//        XCTAssertEqual(controllerVM.heading.title , "About Canada")
+//
+//       }
     
     //MARK:- Example Of a failed TestCase
     func testTableCellHasCorrectLabelText() {
         let cell = ListCell(style: .default, reuseIdentifier: "cellId")
         XCTAssertEqual(cell.cellTitleLabel.text, "Beavers" )
-//        XCTAssertEqual(cell?.descriptionLabel.text, "One")
     }
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testService() {
+        let url = URL(string: WebServiceURLS.kBaseUrl)!
+      var stub = StubRequest(method: .GET, url: url)
+      var response = StubResponse()
+      let body = "Hippolyte".data(using: .utf8)!
+      response.body = body
+      stub.response = response
+      Hippolyte.shared.add(stubbedRequest: stub)
+      Hippolyte.shared.start()
+
+      let expectation = self.expectation(description: "Stubs network call")
+      let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+        XCTAssertEqual(data, body)
+        expectation.fulfill()
+      }
+      task.resume()
+
+      wait(for: [expectation], timeout: 1)
+    }
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
-}
